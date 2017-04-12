@@ -1,26 +1,25 @@
 <template>
   <div id="app">
-<header>
-  <mt-swipe :auto="4000">
-  <mt-swipe-item>1</mt-swipe-item>
-  <mt-swipe-item>2</mt-swipe-item>
-  <mt-swipe-item>3</mt-swipe-item>
-</mt-swipe>
-</header>
+    <div>
+       <mt-button @click.native="handleClick">按钮</mt-button>
+    </div>
     <router-view keep-alive transition="fade" transition-mode='out-in'  linkActiveClass></router-view>
   </div>
 </template>
 
 <script>
-Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem);
 export default {
   name: 'app',
   data () {
     return {
 
     }
+  },
+  methods: {
+  handleClick: function() {
+    this.$toast('Hello world!')
   }
+}
 }
 </script>
 <style>
