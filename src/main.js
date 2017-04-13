@@ -5,6 +5,7 @@ import MintUI from 'mint-ui'
 import { Swipe, SwipeItem } from 'mint-ui';
 import { Button } from 'mint-ui';
 import { Navbar, TabItem } from 'mint-ui';
+import { TabContainer, TabContainerItem } from 'mint-ui';
 import Home from './components/Home.vue';
 import Product from './components/Product.vue';
 import Son from './components/Son.vue';
@@ -19,7 +20,9 @@ Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 Vue.component(Button.name, Button);
 Vue.component(Navbar.name, Navbar);
-Vue.component(TabItem.name, TabItem);
+Vue.component(TabContainer.name, TabContainer);
+Vue.component(TabContainerItem.name, TabContainerItem);
+
 const router = new VueRouter({
     routes: [
       { path: '/home', component: Home },

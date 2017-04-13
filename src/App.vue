@@ -1,35 +1,47 @@
 <template>
   <div id="app">
-    <div>
-      <mt-navbar v-model="selected">
-        <mt-tab-item id="1">收件箱</mt-tab-item>
-        <mt-tab-item id="2">已发送</mt-tab-item>
-        <mt-tab-item id="3">草稿箱</mt-tab-item>
-      </mt-navbar>
-      <!-- tab-container -->
-<mt-tab-container v-model="selected">
-  <mt-tab-container-item id="1">
-    <mt-cell v-for="n in 10" :title="'content ' + n" />
+
+<div class="">
+<my-banner></my-banner>
+</div>
+<mt-tabbar v-model="active">
+  <mt-tab-item id="外卖">
+    外卖
+  </mt-tab-item>
+  <mt-tab-item id="订单">
+    订单
+  </mt-tab-item>
+  <mt-tab-item id="发现">
+    发现
+  </mt-tab-item>
+</mt-tabbar>
+<mt-tab-container v-model="active">
+  <mt-tab-container-item id="外卖">
+    <mt-cell v-for="n in 5" title="tab-container 1"></mt-cell>
   </mt-tab-container-item>
-  <mt-tab-container-item id="2">
-    <mt-cell v-for="n in 4" :title="'content ' + n" />
+  <mt-tab-container-item id="订单">
+    <mt-cell v-for="n in 5" title="tab-container 2"></mt-cell>
   </mt-tab-container-item>
-  <mt-tab-container-item id="3">
-    <mt-cell v-for="n in 6" :title="'content ' + n" />
+  <mt-tab-container-item id="发现">
+    <mt-cell v-for="n in 5" title="tab-container 3"></mt-cell>
   </mt-tab-container-item>
 </mt-tab-container>
-    </div>
     <router-view keep-alive transition="fade" transition-mode='out-in'  linkActiveClass></router-view>
   </div>
 </template>
 
 <script>
+import banner from './components/Banner.vue';
 export default {
   name: 'app',
   data () {
     return {
-        selected:''
+        selected:'外卖',
+        active:''
     }
+  },
+  components:{
+  'my-banner':banner
   },
   methods: {
   handleClick: function() {
@@ -54,7 +66,24 @@ export default {
   box-sizing: border-box;
   padding: 0;
 }
+.banner{
+  height:200px;
+  width:100%;
+}
+.banner img{
+  width: 100%;
+  height: 100%;
+}
+.mint-navbar{
 
+
+}
+footer{
+  position: absolute;
+  margin-top: 0px;
+  width:100%;
+  height: 100px;
+}
 .fade-transition {
  transition: opacity .3s ease;
 }
