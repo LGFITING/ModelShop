@@ -1,47 +1,14 @@
 <template>
   <div id="app">
-
-<div class="">
-<my-banner></my-banner>
-</div>
-<mt-tabbar v-model="active">
-  <mt-tab-item id="外卖">
-    外卖
-  </mt-tab-item>
-  <mt-tab-item id="订单">
-    订单
-  </mt-tab-item>
-  <mt-tab-item id="发现">
-    发现
-  </mt-tab-item>
-</mt-tabbar>
-<mt-tab-container v-model="active">
-  <mt-tab-container-item id="外卖">
-    <mt-cell v-for="n in 5" title="tab-container 1"></mt-cell>
-  </mt-tab-container-item>
-  <mt-tab-container-item id="订单">
-    <mt-cell v-for="n in 5" title="tab-container 2"></mt-cell>
-  </mt-tab-container-item>
-  <mt-tab-container-item id="发现">
-    <mt-cell v-for="n in 5" title="tab-container 3"></mt-cell>
-  </mt-tab-container-item>
-</mt-tab-container>
     <router-view keep-alive transition="fade" transition-mode='out-in'  linkActiveClass></router-view>
   </div>
 </template>
-
 <script>
-import banner from './components/Banner.vue';
 export default {
   name: 'app',
   data () {
     return {
-        selected:'外卖',
-        active:''
     }
-  },
-  components:{
-  'my-banner':banner
   },
   methods: {
   handleClick: function() {
@@ -54,9 +21,10 @@ export default {
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 .router-link-active{
-  color: #000;
+  color: #4A8AF4;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -67,7 +35,7 @@ export default {
   padding: 0;
 }
 .banner{
-  height:200px;
+  height:13rem;
   width:100%;
 }
 .banner img{
@@ -76,7 +44,10 @@ export default {
 }
 .mint-navbar{
 
-
+}
+a{
+  text-decoration: none;
+  color: gray;
 }
 footer{
   position: absolute;
@@ -89,5 +60,11 @@ footer{
 }
 .fade-enter, .fade-leave {
  opacity: 0;
+}
+.loading{
+  position: fixed;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 </style>

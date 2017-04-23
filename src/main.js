@@ -6,8 +6,11 @@ import { Swipe, SwipeItem } from 'mint-ui';
 import { Button } from 'mint-ui';
 import { Navbar, TabItem } from 'mint-ui';
 import { TabContainer, TabContainerItem } from 'mint-ui';
+import { Spinner } from 'mint-ui';
 import Home from './components/Home.vue';
+import Order from './components/Order.vue';
 import Product from './components/Product.vue';
+import Personal from './components/Personal.vue';
 import Son from './components/Son.vue';
 import Two from './components/Two.vue';
 require("!style-loader!css-loader!sass-loader!../static/App.scss");
@@ -22,10 +25,12 @@ Vue.component(Button.name, Button);
 Vue.component(Navbar.name, Navbar);
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
-
+Vue.component(Spinner.name, Spinner);
 const router = new VueRouter({
     routes: [
       { path: '/home', component: Home },
+      { path: '/order',component: Order},
+      { path: '/personal',component: Personal},
       { path: '/product', component: Product,
         children:[{
           path:'son',
