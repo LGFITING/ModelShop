@@ -13,7 +13,8 @@ import Product from './components/Product.vue';
 import Personal from './components/Personal.vue';
 import Son from './components/Son.vue';
 import Two from './components/Two.vue';
-import VueLazyload from 'vue-lazyload'
+import VueLazyload from 'vue-lazyload';
+import Lazyload from './components/Lazyload.vue';
 require("!style-loader!css-loader!sass-loader!../static/App.scss");
 require("!style-loader!css-loader!../static/style.css");
 require("!style-loader!css-loader!../static/css/style.css");
@@ -38,6 +39,7 @@ const router = new VueRouter({
     routes: [
       { path: '/home', component: Home },
       { path: '/order',component: Order},
+      { path: '/lazyload',component:Lazyload},
       { path: '/personal',component: Personal},
       { path: '/product', component: Product,
         children:[{

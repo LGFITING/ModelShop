@@ -1,12 +1,6 @@
 <template>
   <div id="app">
-      <div class="img-list">
-        <ul id="container">
-          <li v-for="img in list">
-            <img v-lazy="img">
-          </li>
-        </ul>
-      </div>
+
     <router-view keep-alive transition="fade" transition-mode='out-in'  linkActiveClass></router-view>
   </div>
 </template>
@@ -93,25 +87,5 @@ footer{
   left: 50%;
   transform: translate(-50%,-50%);
 }
-img[lazy=loading] {
-  /*your style here*/
-}
-img[lazy=error] {
-  /*your style here*/
-},
-img[lazy=loaded] {
-  /*your style here*/
-}
-/*
-or background-image
-*/
-.yourclass[lazy=loading] {
-  /*your style here*/
-}
-.yourclass[lazy=error] {
-  /*your style here*/
-},
-.yourclass[lazy=loaded] {
-  /*your style here*/
-}
+
 </style>
