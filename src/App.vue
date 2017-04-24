@@ -1,5 +1,12 @@
 <template>
   <div id="app">
+      <div class="img-list">
+        <ul id="container">
+          <li v-for="img in list">
+            <img v-lazy="img">
+          </li>
+        </ul>
+      </div>
     <router-view keep-alive transition="fade" transition-mode='out-in'  linkActiveClass></router-view>
   </div>
 </template>
@@ -8,6 +15,25 @@ export default {
   name: 'app',
   data () {
     return {
+        list: [
+          'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg',
+          'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg',
+          // you can customer any image's placeholder while loading or load failed
+          {
+            src: 'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg',
+            error: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1994376176,269026991&fm=117&gp=0.jpg',
+            loading: 'http://cdn.uehtml.com/201402/1392662591495_1140x0.gif'
+          }
+        ]
+        // imgUrl: [
+        //           {src: 'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg'},
+        //           {src: 'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg'},
+        //           {src: 'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg'},
+        //           {src: 'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg'},
+        //           {src: 'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg'},
+        //           {src: 'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg'},
+        //           {src: 'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg'}
+        //         ]
     }
   },
   methods: {
@@ -66,5 +92,26 @@ footer{
   top:50%;
   left: 50%;
   transform: translate(-50%,-50%);
+}
+img[lazy=loading] {
+  /*your style here*/
+}
+img[lazy=error] {
+  /*your style here*/
+},
+img[lazy=loaded] {
+  /*your style here*/
+}
+/*
+or background-image
+*/
+.yourclass[lazy=loading] {
+  /*your style here*/
+}
+.yourclass[lazy=error] {
+  /*your style here*/
+},
+.yourclass[lazy=loaded] {
+  /*your style here*/
 }
 </style>

@@ -15,13 +15,6 @@
     </mt-tab-item>
   </mt-tabbar>
   </div>
-  <div class="hello">
-  <ul>
-    <li v-for="item in imgUrl" class="lazyImg">
-      <img v-lazy="item.src" alt="" width="300" height="150"/>
-    </li>
-  </ul>
-</div>
 </div>
 </template>
 <script type="text/javascript">
@@ -31,13 +24,7 @@ import banner from './Banner.vue';
     data(){
       return{
         active:'home',
-        loading:false,
-        imgUrl: [
-                  {src: 'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg'},
-                  {src: 'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg'},
-                  {src: 'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg'},
-                  {src: 'http://pic.58pic.com/58pic/11/25/25/46j58PICKMh.jpg'}
-                ]
+        loading:false
       }
     },
     components:{
