@@ -4,7 +4,7 @@
    <div class="">
      个人中心
    </div>
-   <mt-tabbar>
+   <mt-tabbar v-model="active">
      <mt-tab-item id="home">
        <router-link to="/home">home</router-link>
      </mt-tab-item>
@@ -22,7 +22,8 @@
   export default{
     data(){
       return{
-        loading:true
+        loading:true,
+        active:'personal'
       }
     }
   }

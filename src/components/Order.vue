@@ -1,7 +1,7 @@
 <template class="Order">
  <div>
    <mt-spinner type="snake" color="#26a2ff" class="loading" :size="40" v-show="loading"></mt-spinner>
-   <mt-tabbar>
+   <mt-tabbar  v-model="active">
      <mt-tab-item id="home">
        <router-link to="/home">home</router-link>
      </mt-tab-item>
@@ -20,7 +20,8 @@
   {
     data(){
       return{
-        loading:true
+        loading:true,
+        active:'orders'
       }
     },
     mounted(){

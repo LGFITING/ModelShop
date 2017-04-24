@@ -13,6 +13,7 @@ import Product from './components/Product.vue';
 import Personal from './components/Personal.vue';
 import Son from './components/Son.vue';
 import Two from './components/Two.vue';
+import VueLazyload from 'vue-lazyload'
 require("!style-loader!css-loader!sass-loader!../static/App.scss");
 require("!style-loader!css-loader!../static/style.css");
 require("!style-loader!css-loader!../static/css/style.css");
@@ -26,6 +27,13 @@ Vue.component(Navbar.name, Navbar);
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
 Vue.component(Spinner.name, Spinner);
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1994376176,269026991&fm=117&gp=0.jpg',
+  loading: 'http://cdn.uehtml.com/201402/1392662591495_1140x0.gif',
+  attempt: 1,
+  listenEvents: [ 'scroll', 'mousewheel' ]
+});
 const router = new VueRouter({
     routes: [
       { path: '/home', component: Home },
