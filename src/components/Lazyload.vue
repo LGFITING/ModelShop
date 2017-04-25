@@ -2,8 +2,8 @@
  <div>
    <div class="img-list">
      <ul id="container">
-       <li v-for="img in list">
-         <img v-lazy="img">
+       <li v-for="(img,index) in list">
+         <img v-lazy="img" :class="{'first' : index==0}">
        </li>
      </ul>
    </div>
@@ -67,6 +67,9 @@ img[lazy=loaded] {
   vertical-align: middle;
   text-align: center;
   margin:10px auto;
+}
+.first[lazy=loaded]{
+    margin-top:-10px !important;
 }
 /*
 or background-image
